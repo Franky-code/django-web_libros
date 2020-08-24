@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Liros por Autor</title>
+</head>
+<body>
+    <h1>Lista Libros Autor</h1>
+    <table border="1">
+        <thead>
+            <th>ID</th>
+            <th>Titulo</th>
+            <th>Autor</th>
+        </thead>
+        <tbody>
+            {% for l in libros %}
+            <tr>
+                <td>{{l.id}}</td>
+                <td>{{l.title}}</td>
+                <td>{{l.autor.nombre}}</td>
+            </tr>
+            {% endfor%}
+        </tbody>
+    </table>
+</body>
+</html>
