@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import (TemplateView, ListView)
+from django.views.generic import (TemplateView, ListView, CreateView,)
 from .models import Autor, Libros
 
 
@@ -26,3 +26,9 @@ class ListaLibrosAutores(ListView):
         id=self.kwargs["pk"]
         lista = Libros.objects.filter(autor=id)
         return lista
+
+class AddAutor(CreateView):
+    template_name='biblioteca/add-autor.html'
+    model= Autor
+    fields = ['nombre', 'nacionalidad']
+    success_url = '/'
